@@ -16,11 +16,11 @@ join Shipper as s
 
 -- Display the name and quantity of the products ordered in order with Id 10251. Sort by ProductName. Shows 3 records.
 
-select p.ProductName, p.Quantity
+select p.ProductName, od.Quantity
 from Product as p
 join OrderDetail as od
-  on od.ProductId = p.Id
-where od.OrderId = 10251
+  on p.Id = od.ProductId 
+where od.OrderId = '10251'
 order by p.ProductName asc
 
 -- Display the OrderID, Customer's Company Name and the employee's LastName for every order. All columns should be labeled clearly. Displays 16,789 records.
