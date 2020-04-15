@@ -53,7 +53,13 @@ const out = {
                     return null;
                 }
             })
-    }
+    },
+
+    addStep: (step, schemeId) => {
+        return db("steps")
+            .insert({ ...step, scheme_id: schemeId })
+            .then(([id]) => id)
+    },
 };
 
 module.exports = out;
